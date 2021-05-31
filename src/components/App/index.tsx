@@ -3,9 +3,11 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from 'components/Home'
 import GlobalStyles from 'components/GlobalStyles'
 
+
 const App: FC = (): ReactElement => (
 	<>
-		<GlobalStyles />
+	
+		<GlobalStyles/>
 		<BrowserRouter>
 			<Switch>
 				<Route path="/">

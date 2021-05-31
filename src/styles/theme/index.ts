@@ -1,8 +1,8 @@
-export const primaryColor = '#272b30'
-export const secondaryColor = '#32383e'
+export const primaryColor = 'lightgray'
+export const secondaryColor = '#fff'
 
-export const primaryTextColor = '#aaa'
+export const primaryTextColor = '#000'
 export const secondaryTextColor = '#7a8288'
-export const tertiaryTextColor = '#272b30'
+export const tertiaryTextColor = '#fff'
 
 export const backgroundColor = '#7a8288'

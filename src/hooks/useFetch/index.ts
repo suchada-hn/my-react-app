@@ -1,43 +1,37 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import { Rest } from 'types'
-// import { API_HOST, API_KEY } from './constants'
-import { Filter } from 'components/RestList/types'
 
 type Response = {
 	rests: Rest[]
 	error: string
+    data: Rest[]
 }
 
-const useFetch = (params: Filter): Response => {
+const useFetch = (): Response => {
 	const [rests, setRests] = useState<Rest[]>([])
 	const [err, setErr] = useState<string>('')
-	const { platform, genre, tag, sortBy } = params
+    const [data, setData] = useState<Rest[]>([])
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/suchada-hn/res/main/data2.json')
+        .then((response) => response.json())
+        .then((responseJson) => {
+            setData(responseJson)
+            setRests(responseJson)
+            console.log('set rests')
+           
+        })
+        .catch((error) => {
+            console.error(error);
+          });
+        
+        console.log('done');
+      },[])
 
-	useEffect(() => {
-		axios
-			.get('./data.json'
-            // ,{
-			// 	baseURL: `https://${API_HOST}/api`,
-			// 	headers: {
-			// 		'x-rapidapi-key': API_KEY,
-			// 		'x-rapidapi-host': API_HOST,
-			// 	},
-			// 	params: {
-			// 		platform,
-			// 		category: genre,
-			// 		tag,
-			// 		'sort-by': sortBy,
-			// 	},
-			// }
-            )
-			.then(res => {
-                console.log(res.data)
-                setRests(res.data.data)})
-			.catch(e => setErr(e.message))
-	}, [platform, genre, tag, sortBy])
+
+    console.log('final rests')
 
 	return {
+        data,
 		rests,
 		error: err,
 	}

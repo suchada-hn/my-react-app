@@ -8,7 +8,7 @@ export const List = styled.ul`
 	padding: 0 16px;
 	list-style-type: none;
 	box-sizing: border-box;
-
+	
 	@media (min-width: ${breakpoints.tablet}) {
 		max-width: ${breakpoints.tablet};
 	}
@@ -19,6 +19,7 @@ export const List = styled.ul`
 `
 
 export const ListItem = styled.li`
+
 	margin-bottom: 24px;
 	transition: all 0.2s ease-in-out;
 

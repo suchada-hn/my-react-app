@@ -1,13 +1,11 @@
 export type Rest = {
-	id: number
+	id: number 
 	title: string
 	thumbnail: string
 	short_description: string
-	game_url: string
 	genre: string
 	platform: string
-	publisher: string
-	developer: string
-	release_date: string
-	freetogame_profile_url: string
+	sortBy: number
+	isOpen: string
+	tag: string
 }

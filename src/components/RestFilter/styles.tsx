@@ -1,15 +1,17 @@
 import styled from 'styled-components'
-import { backgroundColor, secondaryTextColor } from 'styles/theme'
 import { breakpoints } from 'styles/breakpoints'
 
 export const Form = styled.form`
+
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	max-width: 542px;
-	padding: 0 16px;
-	margin: 24px auto;
-	color: ${secondaryTextColor};
+	
+	margin: 0px auto;
+	
 	box-sizing: border-box;
+	
+
 
 	@media (min-width: ${breakpoints.tablet}) {
 		max-width: ${breakpoints.tablet};
@@ -30,9 +32,3 @@ export const Label = styled.label`
 	}
 `
 
-export const Select = styled.select`
-	width: 100%;
-	margin-top: 8px;
-	color: white;
-	background-color: ${backgroundColor};
-`
