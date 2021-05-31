@@ -22,6 +22,7 @@ const useFetch = (): Response => {
         })
         .catch((error) => {
             console.error(error);
+            setErr(error)
           });
         
         console.log('done');

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, useCallback, useState, useEffect } from 'react'
+import React, { ChangeEvent, ReactElement, useCallback, useState } from 'react'
 import useFetch from 'hooks/useFetch'
 import { Filter } from './types'
 import './index.css';
@@ -229,7 +229,7 @@ const RestListContainer = (): ReactElement => {
 						if (filter.sortBy== ''){return val}
 						else{return val? val.sortBy.toString() == filter.sortBy : true}
 					})
-					.map((val,key) =>{
+					.map((val) =>{
 						console.log('map')
 						console.log(val)
 						return (
